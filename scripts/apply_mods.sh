@@ -46,5 +46,11 @@ python3 "$SCRIPT_DIR/apply_siri_guard.py" "$SOURCE_DIR"
 # any manual proxy setup, otherwise users see "network problems" at login.
 python3 "$SCRIPT_DIR/apply_builtin_proxy.py" "$SOURCE_DIR"
 
+# Keep-alive: hold a silent audio session in the background so the
+# process stays alive and incoming messages surface as local
+# notifications (WeChat-style), entirely inside the app.
+python3 "$SCRIPT_DIR/apply_keepalive.py" "$SOURCE_DIR"
+
+
 
 echo "All unsigned-sideload crash guards applied."
