@@ -42,4 +42,9 @@ python3 "$SCRIPT_DIR/apply_clouddata_guard.py" "$SOURCE_DIR"
 # entitlement, raised right after a successful login.
 python3 "$SCRIPT_DIR/apply_siri_guard.py" "$SOURCE_DIR"
 
+# Built-in self-hosted MTProto proxy: a fresh install must connect without
+# any manual proxy setup, otherwise users see "network problems" at login.
+python3 "$SCRIPT_DIR/apply_builtin_proxy.py" "$SOURCE_DIR"
+
+
 echo "All unsigned-sideload crash guards applied."
