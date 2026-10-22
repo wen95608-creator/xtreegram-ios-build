@@ -24,8 +24,9 @@ jobs:
       # App Store Telegram (and so a free Apple ID can provision it).
       CUSTOM_BUNDLE_ID: com.tgself.messenger
 
-      # Locales kept in the shipped IPA (Chinese included).
-      IPA_KEEP_LOCALES: Base,en,zh
+      # Locales kept in the shipped IPA (Simplified Chinese included; the
+      # upstream directory name is zh-Hans.lproj and slim_ipa.sh matches exactly).
+      IPA_KEEP_LOCALES: Base,en,zh-Hans
 
       # Extensions removed to keep the unsigned IPA small enough to sideload.
       IPA_DROP_PLUGINS: Watch,Widget,BroadcastUpload,Share,Notification,Intents
