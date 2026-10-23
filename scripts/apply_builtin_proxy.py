@@ -17,16 +17,14 @@ target = (
 )
 
 replacement = (
-    '            // Built-in self-hosted MTProto proxy: used whenever the user has no\n'
+    '            // Built-in self-hosted SOCKS5 proxy: used whenever the user has no\n'
     '            // proxy of their own configured, so a fresh install connects out of\n'
     '            // the box. The user can still override it in Settings -> Data and\n'
     '            // Storage -> Proxy.\n'
     '            var effectiveProxySettings = proxySettings\n'
     '            if effectiveProxySettings?.effectiveActiveServer == nil {\n'
-    '                if let builtinSecret = Data(base64Encoded: "7vLMzNSKzMdoTRl8akly73Z0ZWxlZ3JhbS5vcmc=") {\n'
-    '                    let builtinServer = ProxyServerSettings(host: "3.96.147.96", port: 443, connection: .mtp(secret: builtinSecret))\n'
-    '                    effectiveProxySettings = ProxySettings(enabled: true, servers: [builtinServer], activeServer: builtinServer, useForCalls: false)\n'
-    '                }\n'
+    '                let builtinServer = ProxyServerSettings(host: "147.135.213.72", port: 20290, connection: .socks5(username: "7250160120", password: "f073ac71-d471-4678-bc64-7abddc1e8220"))\n'
+    '                effectiveProxySettings = ProxySettings(enabled: true, servers: [builtinServer], activeServer: builtinServer, useForCalls: false)\n'
     '            }\n'
     '            if let effectiveActiveServer = effectiveProxySettings?.effectiveActiveServer {\n'
     '                apiEnvironment = apiEnvironment.withUpdatedSocksProxySettings(effectiveActiveServer.mtProxySettings)\n'
